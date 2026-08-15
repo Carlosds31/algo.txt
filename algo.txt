@@ -1,0 +1,31 @@
+ALGORITHME CompterPhrase
+
+VARIABLES
+    i : longueur, nbMots, nbVoyelles
+    c : caractere
+
+DEBUT
+    longueur := 0
+    nbMots := 0
+    nbVoyelles := 0
+
+    REPETER
+        LIRE(caractere)
+        longueur := longueur + 1
+
+        SI (caractere = ' ') ALORS
+            nbMots := nbMots + 1
+        FINSI
+
+        SI (caractere = 'a' OU caractere = 'e' OU caractere = 'i' OU caractere = 'o' OU caractere = 'u') ALORS
+            nbVoyelles := nbVoyelles + 1
+        FINSI
+
+    JUSQU'A (caractere = '.')
+
+    nbMots := nbMots + 1   // le dernier mot n'a pas d'espace après lui
+
+    AFFICHER("Longueur : ", longueur)
+    AFFICHER("Nombre de mots : ", nbMots)
+    AFFICHER("Nombre de voyelles : ", nbVoyelles)
+FIN
