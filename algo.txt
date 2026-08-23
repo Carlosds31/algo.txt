@@ -1,31 +1,38 @@
-ALGORITHME CompterPhrase
-
-VARIABLES
-    i : longueur, nbMots, nbVoyelles
-    c : caractere
-
+algorithme: analyse_phrase
+variables: car: caractere; 
+           log, mot, voyelle: entier    
 DEBUT
-    longueur := 0
-    nbMots := 0
-    nbVoyelles := 0
+log:= 0
+mot:= 1
+voyelle:= 0
+ecrire ("Saisir une phrase")
+lire ("car") 
+// détermination de la longueur
+Tant que (car != ".") Faire
+    log:= log + 1
+// détermine le nombre de mot 
+Si (car=" ") Alors
+    mot:= mot + 1
+    Finsi
+// Déterminé le nombre de voyelle
+Si (car= "a" ou car= "e" ou car= "i" ou car= "o" ou car= "u" ou car= "A" ou car= "E" ou car= "I" ou car= "O" ou car= "U") Alors
+     voyelle:= voyelle + 1
+    Finsi
+    lire("car")
+    ecrire("La longueur de la phrase est :",log)
+    ecrire("Le nombre de mot dans la phrase est :",mot)
+    ecrire("Le nombre de voyelle dans la phrase est :",voyelle)
+FinFaire
 
-    REPETER
-        LIRE(caractere)
-        longueur := longueur + 1
 
-        SI (caractere = ' ') ALORS
-            nbMots := nbMots + 1
-        FINSI
 
-        SI (caractere = 'a' OU caractere = 'e' OU caractere = 'i' OU caractere = 'o' OU caractere = 'u') ALORS
-            nbVoyelles := nbVoyelles + 1
-        FINSI
 
-    JUSQU'A (caractere = '.')
 
-    nbMots := nbMots + 1   // le dernier mot n'a pas d'espace après lui
 
-    AFFICHER("Longueur : ", longueur)
-    AFFICHER("Nombre de mots : ", nbMots)
-    AFFICHER("Nombre de voyelles : ", nbVoyelles)
+
+
+
+
+
+
 FIN
